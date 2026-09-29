@@ -1,0 +1,247 @@
+/* Kevin the Pig — colors from the app's editions.
+   Light: Strawberry Milk. Dark: Midnight. */
+:root {
+  --paper: #F1C9C3;
+  --paper-deep: #E8B8B1;
+  --ink: #6E2F3B;
+  --ink-soft: rgba(110, 47, 59, 0.72);
+  --ink-faint: rgba(110, 47, 59, 0.18);
+  --print: #F8F6F2;
+  --pig: #F4A5AF;
+  --accent: #E9808F;
+  --shadow: rgba(110, 47, 59, 0.18);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #262A33;
+    --paper-deep: #1D2027;
+    --ink: #D8DBE4;
+    --ink-soft: rgba(216, 219, 228, 0.72);
+    --ink-faint: rgba(216, 219, 228, 0.16);
+    --print: #F3F1EC;
+    --pig: #F4A5AF;
+    --accent: #BEA9EC;
+    --shadow: rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 120% 70% at 50% 18%, rgba(255, 255, 255, 0.28), transparent 60%),
+    linear-gradient(var(--paper), var(--paper-deep));
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+/* Placard labels, like the app's uppercase tracked captions. */
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.display {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header / footer */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 8px var(--shadow); }
+.brand span { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 22px; }
+.nav { display: flex; gap: 18px; }
+.nav a { text-decoration: none; }
+.nav a[aria-current="page"] { text-decoration: underline; }
+
+.site-footer {
+  padding: 48px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px 0 24px;
+}
+.hero .icon {
+  width: 148px;
+  height: 148px;
+  border-radius: 33px;
+  box-shadow: 0 18px 40px var(--shadow), 0 2px 6px var(--shadow);
+}
+.hero h1 { font-size: clamp(52px, 12vw, 84px); margin-top: 28px; }
+.hero .lede {
+  max-width: 30em;
+  margin: 16px auto 0;
+  font-size: 19px;
+  color: var(--ink-soft);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.15s ease;
+}
+.cta:hover { transform: translateY(-1px); text-decoration: none; }
+.cta:active { transform: scale(0.97); }
+.cta[aria-disabled="true"] {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: none;
+  border: 1px solid var(--ink-faint);
+  pointer-events: none;
+}
+.cta-note { margin-top: 12px; font-size: 14px; color: var(--ink-soft); }
+
+/* Instant-print cards */
+.prints {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin: 56px 0 8px;
+}
+.print {
+  background: var(--print);
+  color: #3A2F30;
+  padding: 14px 14px 18px;
+  border-radius: 3px;
+  box-shadow: 0 14px 30px var(--shadow), 0 1px 3px var(--shadow);
+}
+.print:nth-child(odd) { transform: rotate(-1.4deg); }
+.print:nth-child(even) { transform: rotate(1.1deg); }
+.print .swatch {
+  aspect-ratio: 4 / 3;
+  border-radius: 1px;
+  display: grid;
+  place-items: center;
+}
+.print .swatch {
+  overflow: hidden;
+  place-items: end center;
+}
+.print .swatch .pig {
+  width: 58%;
+  aspect-ratio: 704 / 724;
+  height: auto;
+  margin-bottom: -2px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+}
+.print h3 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 12px 0 2px;
+}
+.print p { margin: 0; font-size: 14px; color: rgba(58, 47, 48, 0.72); }
+
+/* Editions strip */
+.editions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.editions li {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--print);
+  box-shadow: 0 3px 8px var(--shadow);
+}
+
+/* Document pages */
+.doc {
+  background: var(--print);
+  color: #3A2F30;
+  border-radius: 4px;
+  padding: clamp(24px, 6vw, 56px);
+  margin: 16px 0 0;
+  box-shadow: 0 18px 44px var(--shadow), 0 1px 3px var(--shadow);
+}
+.doc h1 { font-size: clamp(40px, 9vw, 60px); }
+.doc h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 36px 0 8px;
+}
+.doc .label { color: rgba(58, 47, 48, 0.6); }
+.doc a { color: #6E2F3B; }
+.doc ul { padding-left: 1.2em; }
+.doc li { margin: 6px 0; }
+.doc dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 16px 0; }
+.doc dt { font-weight: 600; }
+.doc dd { margin: 0; }
+@media (max-width: 520px) {
+  .doc dl { grid-template-columns: 1fr; gap: 2px; }
+  .doc dd { margin-bottom: 10px; }
+}
+
+.callout {
+  border-left: 3px solid #E9808F;
+  padding: 4px 0 4px 16px;
+  margin: 20px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta, .print { transition: none; transform: none !important; }
+}

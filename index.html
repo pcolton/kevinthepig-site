@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F1C9C3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#262A33" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="style.css">
+<title>Kevin the Pig</title>
+<meta name="description" content="A squishy vinyl pig who lives on your phone. Poke him, squeeze him, toss him, and take his portrait.">
+<meta property="og:title" content="Kevin the Pig">
+<meta property="og:description" content="A squishy vinyl pig who lives on your phone. Join the TestFlight beta.">
+<meta property="og:image" content="https://pcolton.github.io/kevinthepig-site/og-image.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pig" viewBox="160 300 704 724">
+    <path fill="currentColor" d="M232 560C196 452 204 360 236 312C310 330 388 392 424 458Z"/>
+    <path fill="currentColor" d="M792 560C828 452 820 360 788 312C714 330 636 392 600 458Z"/>
+    <path fill="#000" fill-opacity="0.12" d="M270 520C250 460 254 408 268 380C310 394 350 430 372 466Z"/>
+    <path fill="#000" fill-opacity="0.12" d="M754 520C774 460 770 408 756 380C714 394 674 430 652 466Z"/>
+    <path fill="currentColor" d="M180 1024C180 740 330 480 512 480C694 480 844 740 844 1024Z"/>
+    <path fill="#fff" fill-opacity="0.22" d="M180 1024C180 740 330 480 512 480C694 480 844 740 844 1024Z" style="mix-blend-mode:soft-light"/>
+    <ellipse fill="#000" fill-opacity="0.1" cx="512" cy="840" rx="160" ry="110"/>
+    <ellipse fill="#000" fill-opacity="0.32" cx="462" cy="846" rx="24" ry="40"/>
+    <ellipse fill="#000" fill-opacity="0.32" cx="562" cy="846" rx="24" ry="40"/>
+    <circle fill="#3A1F2B" cx="410" cy="650" r="30"/>
+    <circle fill="#3A1F2B" cx="614" cy="650" r="30"/>
+    <circle fill="#fff" cx="400" cy="639" r="10"/>
+    <circle fill="#fff" cx="604" cy="639" r="10"/>
+  </symbol>
+</svg>
+<header class="wrap site-header">
+  <a class="brand" href="./"><img src="icon.svg" alt="" width="32" height="32"><span>Kevin the Pig</span></a>
+  <nav class="nav label" aria-label="Site">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <img class="icon" src="icon.svg" alt="Kevin the Pig app icon" width="148" height="148">
+    <p class="label" style="margin-top:28px">For iPhone &amp; iPad · Public beta</p>
+    <h1 class="display">Kevin the Pig</h1>
+    <p class="lede">A squishy vinyl pig who lives on a sheet of studio paper. Poke him, squeeze him, toss him across the room — then take his portrait.</p>
+    <!-- Replace href with the TestFlight public link and remove aria-disabled when the beta opens. -->
+    <a class="cta" href="#" aria-disabled="true">Public beta opening soon</a>
+    <p class="cta-note">Requires the free <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> app.</p>
+  </section>
+
+  <section class="prints" aria-label="What you can do">
+    <article class="print">
+      <div class="swatch" style="background:#F1C9C3"><svg class="pig" style="color:#F4A5AF" aria-hidden="true"><use href="#pig"/></svg></div>
+      <h3>Poke &amp; squeeze</h3>
+      <p>Tap to boop, press and hold to squish, pinch with two fingers. He squeaks.</p>
+    </article>
+    <article class="print">
+      <div class="swatch" style="background:#D3E2C4"><svg class="pig" style="color:#A9D29C" aria-hidden="true"><use href="#pig"/></svg></div>
+      <h3>Toss him around</h3>
+      <p>Pick him up, turn him, fling him — or push him flat into the paper.</p>
+    </article>
+    <article class="print">
+      <div class="swatch" style="background:#F3E4B6"><svg class="pig" style="color:#F6CD6D" aria-hidden="true"><use href="#pig"/></svg></div>
+      <h3>Portrait studio</h3>
+      <p>Frame a shot and watch it develop like instant film, then save it to Photos.</p>
+    </article>
+    <article class="print">
+      <div class="swatch" style="background:#DBD2EF"><svg class="pig" style="color:#BEA9EC" aria-hidden="true"><use href="#pig"/></svg></div>
+      <h3>Five editions</h3>
+      <p>Double-tap the paper to roll out a new colorway: Strawberry Milk to Midnight.</p>
+    </article>
+  </section>
+
+  <ul class="editions" aria-label="Editions">
+    <li style="background:#F4A5AF" title="Strawberry Milk"></li>
+    <li style="background:#A9D29C" title="Pistachio"></li>
+    <li style="background:#F6CD6D" title="Butter"></li>
+    <li style="background:#BEA9EC" title="Lilac"></li>
+    <li style="background:#101116" title="Midnight"></li>
+  </ul>
+</main>
+<footer class="wrap site-footer label">
+  <span>© 2026 Paul Colton</span>
+  <span><a href="mailto:apps@colton.net">apps@colton.net</a></span>
+</footer>
+</body>
+</html>

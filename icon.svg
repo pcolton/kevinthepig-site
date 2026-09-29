@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Kevin the Pig</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6EEE6"/><stop offset="1" stop-color="#EADBCF"/></linearGradient>
+    <linearGradient id="ears" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAABBD"/><stop offset="1" stop-color="#F39AAE"/></linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="0" y1="480" x2="0" y2="1024"><stop offset="0" stop-color="#FFC4CF"/><stop offset="1" stop-color="#F39AAE"/></linearGradient>
+    <linearGradient id="snout" gradientUnits="userSpaceOnUse" x1="0" y1="730" x2="0" y2="950"><stop offset="0" stop-color="#FAA2B8"/><stop offset="1" stop-color="#EE7E9B"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#6E2F3B" flood-opacity="0.2"/></filter>
+    <clipPath id="squircle"><rect width="1024" height="1024" rx="228"/></clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <g filter="url(#shadow)">
+      <path fill="url(#ears)" d="M232 560C196 452 204 360 236 312C310 330 388 392 424 458Z"/>
+      <path fill="url(#ears)" d="M792 560C828 452 820 360 788 312C714 330 636 392 600 458Z"/>
+      <path fill="#E27A93" d="M270 520C250 460 254 408 268 380C310 394 350 430 372 466Z"/>
+      <path fill="#E27A93" d="M754 520C774 460 770 408 756 380C714 394 674 430 652 466Z"/>
+      <path fill="url(#face)" d="M180 1024C180 740 330 480 512 480C694 480 844 740 844 1024Z"/>
+      <ellipse fill="url(#snout)" cx="512" cy="840" rx="160" ry="110"/>
+    </g>
+    <ellipse fill="#B84E6D" cx="462" cy="846" rx="24" ry="40"/>
+    <ellipse fill="#B84E6D" cx="562" cy="846" rx="24" ry="40"/>
+    <circle fill="#3A1F2B" cx="410" cy="650" r="30"/>
+    <circle fill="#3A1F2B" cx="614" cy="650" r="30"/>
+    <circle fill="#FFFFFF" cx="400" cy="639" r="10"/>
+    <circle fill="#FFFFFF" cx="604" cy="639" r="10"/>
+  </g>
+</svg>
