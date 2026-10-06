@@ -14,7 +14,7 @@
 <title>Kevin the Pig</title>
 <meta name="description" content="The squeaky fidget toy you can poke, prod, spin and pinch. Scanned from a real rubber pig, made for iPhone and iPhone Duo.">
 <meta property="og:title" content="Kevin the Pig">
-<meta property="og:description" content="The squeaky fidget toy you can poke, prod, spin and pinch. On the App Store.">
+<meta property="og:description" content="The squeaky fidget toy you can poke, prod, spin and pinch. For iPhone and iPhone Duo.">
 <meta property="og:image" content="https://kevinthepig.com/og-image.png">
 </head>
 <body>
@@ -49,10 +49,12 @@
     <p class="label" style="margin-top:28px">For iPhone · Made for iPhone Duo</p>
     <h1 class="display">Kevin the Pig</h1>
     <p class="lede">The squeaky fidget toy you can poke, prod, spin and pinch. He squeaks, oinks and wobbles back every time.</p>
-    <!-- Apple's official badge (toolbox.marketingtools.apple.com), unmodified, linking to the product page. -->
-    <a class="badge" href="https://apps.apple.com/app/id6817405741">
+    <!-- Apple's official badge (toolbox.marketingtools.apple.com), unmodified, linking to the
+         product page. store.js shows it once Kevin is on the App Store; until then, "Coming soon". -->
+    <a class="badge" href="https://apps.apple.com/app/id6817405741" data-store-badge hidden>
       <img src="media/app-store-badge-black.svg" alt="Download on the App Store" width="150" height="50">
     </a>
+    <p class="cta" aria-disabled="true" data-store-soon>Coming soon to the App Store</p>
   </section>
 
   <figure class="banner">
@@ -119,7 +121,8 @@
 </main>
 <footer class="wrap site-footer label">
   <span>© 2026 Paul Colton</span>
-  <span><a href="mailto:apps@colton.net">apps@colton.net</a></span>
+  <span><a href="mailto:hi@kevinthepig.com">hi@kevinthepig.com</a></span>
 </footer>
+<script src="store.js" defer></script>
 </body>
 </html>

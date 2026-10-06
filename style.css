@@ -309,3 +309,5 @@ a:hover { text-decoration-thickness: 2px; }
 @media (prefers-reduced-motion: reduce) {
   .cta, .print { transition: none; transform: none !important; }
 }
+
+[hidden] { display: none !important; }

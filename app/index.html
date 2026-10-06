@@ -1,14 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-redirect="1">
 <head>
   <meta charset="utf-8">
   <title>Kevin the Pig</title>
-  <!-- The link Kevin's shared prints carry (kevinthepig.com/app). Until the
-       app is on the App Store it opens the site; on launch day, point it at
-       https://apps.apple.com/app/id6817405741 (here and in the script). -->
-  <meta http-equiv="refresh" content="0; url=/">
+  <!-- The link Kevin's shared prints carry (kevinthepig.com/app): the App Store
+       once Kevin is on it, the site until then (see /store.js). -->
   <link rel="canonical" href="https://kevinthepig.com/">
-  <script>location.replace("/")</script>
+  <noscript><meta http-equiv="refresh" content="0; url=/"></noscript>
+  <script src="/store.js"></script>
 </head>
 <body><p><a href="/">Kevin the Pig</a></p></body>
 </html>
