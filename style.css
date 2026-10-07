@@ -1,313 +1,208 @@
-/* Kevin the Pig — colors from the app's editions.
-   Light: Strawberry Milk. Dark: Midnight. */
+/* Kevin the Pig — a scrapbook: kraft paper, taped instant prints, sticky notes.
+   Prints and notes stay paper-coloured in dark mode; the kraft turns to night. */
 :root {
-  --paper: #F1C9C3;
-  --paper-deep: #E8B8B1;
-  --ink: #6E2F3B;
-  --ink-soft: rgba(110, 47, 59, 0.72);
-  --ink-faint: rgba(110, 47, 59, 0.18);
-  --print: #F8F6F2;
-  --pig: #F4A5AF;
-  --accent: #E9808F;
-  --shadow: rgba(110, 47, 59, 0.18);
+  --kraft: #EADCC4;
+  --ink: #3E2A2C;
+  --soft: #6E5856;
+  --print: #FBF8F2;
+  --print-ink: #3E2A2C;
+  --print-soft: #6E5856;
+  --pen: #D14D6B;
+  --shadow: rgba(62, 42, 44, .22);
+  --grain: .18;
+  --tape-pink: rgba(244, 165, 175, .78);
+  --tape-mint: rgba(169, 210, 156, .78);
+  --tape-butter: rgba(246, 205, 109, .8);
+  --tape-lilac: rgba(190, 169, 236, .78);
   color-scheme: light;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #262A33;
-    --paper-deep: #1D2027;
-    --ink: #D8DBE4;
-    --ink-soft: rgba(216, 219, 228, 0.72);
-    --ink-faint: rgba(216, 219, 228, 0.16);
-    --print: #F3F1EC;
-    --pig: #F4A5AF;
-    --accent: #BEA9EC;
-    --shadow: rgba(0, 0, 0, 0.45);
+    --kraft: #2B2321;
+    --ink: #EFE3D3;
+    --soft: #BCA99A;
+    --print: #F3EDE3;
+    --pen: #F08AA0;
+    --shadow: rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
 }
 
 * { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
-
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse 120% 70% at 50% 18%, rgba(255, 255, 255, 0.28), transparent 60%),
-    linear-gradient(var(--paper), var(--paper-deep));
-  background-attachment: fixed;
-  color: var(--ink);
-  font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
+  margin: 0; color: var(--ink); font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; line-height: 1.6;
+  background-color: var(--kraft);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 30% 0%, rgba(255,255,255,.3), transparent 60%);
+  overflow-x: clip;
 }
-
+@media (prefers-color-scheme: dark) {
+  body { background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 30% 0%, rgba(255,220,190,.08), transparent 60%); }
+}
 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover { text-decoration-thickness: 2px; }
-
-/* Placard labels, like the app's uppercase tracked captions. */
-.label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.display {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-
-.wrap {
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+a:hover { color: var(--pen); }
+img, video { display: block; max-width: 100%; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.hand { font-family: "Caveat", cursive; font-weight: 700; color: var(--pen); line-height: 1.05; }
+.serif { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; }
 
 /* Header / footer */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0;
-}
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 2px 8px var(--shadow); }
-.brand span { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 22px; }
-.nav { display: flex; gap: 18px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 20px; max-width: 1040px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 24px; }
+.brand:hover { color: inherit; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 2px 6px var(--shadow); }
+.nav { display: flex; gap: 18px; font-family: "Caveat", cursive; font-size: 22px; font-weight: 700; }
 .nav a { text-decoration: none; }
-.nav a[aria-current="page"] { text-decoration: underline; }
+.nav a[aria-current="page"] { color: var(--pen); text-decoration: underline wavy; text-decoration-thickness: 1.5px; text-underline-offset: 5px; }
+@media (max-width: 400px) { .nav { gap: 12px; font-size: 20px; } .brand { font-size: 21px; } }
 
-.site-footer {
-  padding: 48px 0 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-}
+.site-footer { max-width: 1040px; margin: 0 auto; padding: 70px 20px 40px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 15px; color: var(--soft); }
+.site-footer nav { display: flex; gap: 16px; }
+.home .site-footer { padding-bottom: 110px; } /* room for the download bar */
+
+/* Instant prints and tape */
+.polaroid { margin: 0; background: var(--print); color: var(--print-ink); padding: 12px 12px 14px; box-shadow: 0 1px 2px rgba(0,0,0,.15), 0 14px 30px var(--shadow); position: relative; transition: transform .35s cubic-bezier(.3,1.5,.5,1); }
+.polaroid figcaption { font-family: "Caveat", cursive; font-weight: 700; font-size: 24px; text-align: center; margin-top: 8px; line-height: 1.1; }
+.polaroid:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 3; }
+.tape { position: absolute; width: 110px; height: 30px; top: -14px; left: 50%; margin-left: -55px; background: var(--tape-pink); transform: rotate(-4deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.tape.mint { background: var(--tape-mint); }
+.tape.butter { background: var(--tape-butter); }
+.tape.lilac { background: var(--tape-lilac); }
 
 /* Hero */
-.hero {
-  text-align: center;
-  padding: 40px 0 24px;
-}
-.hero .icon {
-  width: 148px;
-  height: 148px;
-  border-radius: 33px;
-  box-shadow: 0 18px 40px var(--shadow), 0 2px 6px var(--shadow);
-}
-.hero h1 { font-size: clamp(52px, 12vw, 84px); margin-top: 28px; }
-.hero .lede {
-  max-width: 30em;
-  margin: 16px auto 0;
-  font-size: 19px;
-  color: var(--ink-soft);
+.hero { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; padding: 30px 20px 40px; max-width: 1040px; margin: 0 auto; }
+.hero h1 { font-size: clamp(60px, 10vw, 112px); line-height: .9; margin: 0; letter-spacing: -.01em; }
+.hero .hi { font-size: 34px; margin: 0 0 6px; transform: rotate(-3deg); display: inline-block; }
+.hero .lede { font-size: 20px; color: var(--soft); max-width: 24em; margin: 20px 0 0; }
+.hero-pic { transform: rotate(2.5deg); }
+.hero-pic video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 38% 55%; background: #2A1714; }
+.note { position: absolute; font-size: 28px; pointer-events: none; }
+.note svg { display: block; overflow: visible; }
+.note-1 { left: -80px; bottom: 34px; transform: rotate(-8deg); }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 48px; }
+  .hero .lede { margin-inline: auto; }
+  .note-1 { left: auto; right: 6px; bottom: -48px; }
+  .note-1 svg { display: none; }
 }
 
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 32px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 8px 20px var(--shadow);
-  transition: transform 0.15s ease;
+/* Get it: a rubber stamp until launch, Apple's badge after (see store.js) */
+.get { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
+@media (max-width: 860px) { .hero .get { justify-content: center; } }
+.stamp {
+  margin: 0; display: inline-block; color: var(--pen); border: 4px solid var(--pen); border-radius: 10px; padding: 8px 18px 6px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 15px; line-height: 1.2; text-align: center;
+  transform: rotate(-6deg); animation: thunk .6s cubic-bezier(.3,1.8,.5,1) .4s both;
 }
-.cta:hover { transform: translateY(-1px); text-decoration: none; }
-.cta:active { transform: scale(0.97); }
-.cta[aria-disabled="true"] {
-  background: transparent;
-  color: var(--ink);
-  box-shadow: none;
-  border: 1px solid var(--ink-faint);
-  pointer-events: none;
-}
-.cta-note { margin-top: 12px; font-size: 14px; color: var(--ink-soft); }
+.stamp b { display: block; font-size: 30px; letter-spacing: .06em; font-weight: 600; }
+@keyframes thunk { from { transform: rotate(-6deg) scale(1.8); opacity: 0; } }
+/* Apple's badge, unmodified, at least 40px high, with clear space */
+.badge { display: inline-block; padding: 10px; line-height: 0; transition: transform .2s; }
+.badge:hover { transform: rotate(-2deg) scale(1.05); }
+.badge img { height: 56px; width: auto; }
+.aside { font-family: "Caveat", cursive; font-size: 24px; font-weight: 700; color: var(--soft); }
 
-/* Instant-print cards */
-.prints {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-  margin: 56px 0 8px;
-}
-.print {
-  background: var(--print);
-  color: #3A2F30;
-  padding: 14px 14px 18px;
-  border-radius: 3px;
-  box-shadow: 0 14px 30px var(--shadow), 0 1px 3px var(--shadow);
-}
-.print:nth-child(odd) { transform: rotate(-1.4deg); }
-.print:nth-child(even) { transform: rotate(1.1deg); }
-.print .swatch {
-  aspect-ratio: 4 / 3;
-  border-radius: 1px;
-  display: grid;
-  place-items: center;
-}
-.print .swatch {
-  overflow: hidden;
-  place-items: end center;
-}
-.print .swatch .pig {
-  width: 58%;
-  aspect-ratio: 704 / 724;
-  height: auto;
-  margin-bottom: -2px;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
-}
-.print h3 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 24px;
-  margin: 12px 0 2px;
-}
-.print p { margin: 0; font-size: 14px; color: rgba(58, 47, 48, 0.72); }
+/* Sections */
+section.page { padding-top: 70px; }
+h2.serif { font-size: clamp(40px, 6vw, 60px); line-height: 1; margin: 0 0 12px; }
 
-/* Editions strip */
-.editions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 36px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.editions li {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid var(--print);
-  box-shadow: 0 3px 8px var(--shadow);
-}
+.feature { display: grid; grid-template-columns: 280px 1fr; gap: 54px; align-items: center; }
+.feature .polaroid { transform: rotate(-3deg); }
+.feature video { width: 100%; aspect-ratio: 886 / 1920; object-fit: cover; background: #000; }
+.feature p { color: var(--soft); }
+.feature .scribble { font-size: 30px; margin: 18px 0 0; transform: rotate(-2deg); display: inline-block; }
+.feature u { text-decoration: none; background: linear-gradient(transparent 60%, rgba(244,165,175,.7) 60% 90%, transparent 90%); }
+@media (prefers-color-scheme: dark) { .feature u { background: linear-gradient(transparent 60%, rgba(240,138,160,.4) 60% 90%, transparent 90%); color: var(--ink); } }
+@media (max-width: 760px) { .feature { grid-template-columns: 1fr; text-align: center; } .feature .polaroid { width: 230px; margin: 0 auto; } }
 
-/* Document pages */
+/* Screenshots, scattered */
+.board { display: flex; gap: 26px; overflow-x: auto; padding: 40px max(20px, calc((100vw - 1040px) / 2)) 30px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.board::-webkit-scrollbar { display: none; }
+.board .polaroid { flex: 0 0 auto; width: min(62vw, 230px); scroll-snap-align: center; padding-bottom: 10px; }
+.board .polaroid:nth-child(3n+1) { transform: rotate(-3deg); }
+.board .polaroid:nth-child(3n+2) { transform: rotate(2deg) translateY(16px); }
+.board .polaroid:nth-child(3n) { transform: rotate(-1deg) translateY(-6px); }
+.board .polaroid:nth-child(4n+2) .tape { background: var(--tape-mint); }
+.board .polaroid:nth-child(4n+3) .tape { background: var(--tape-butter); transform: rotate(3deg); }
+.board .polaroid:nth-child(4n) .tape { background: var(--tape-lilac); }
+.board figcaption { font-size: 21px; }
+.board-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.board-head .hand { font-size: 26px; }
+
+/* Sticky notes */
+.notes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 30px; }
+@media (max-width: 900px) { .notes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .notes { grid-template-columns: 1fr; max-width: 300px; margin-inline: auto; } }
+.sticky-note { padding: 20px 18px 22px; color: var(--print-ink); box-shadow: 0 12px 20px -8px var(--shadow); position: relative; transition: transform .3s cubic-bezier(.3,1.5,.5,1); }
+.sticky-note:nth-child(1) { background: #FFD3D9; transform: rotate(-2deg); }
+.sticky-note:nth-child(2) { background: #D7EDC9; transform: rotate(1.5deg); }
+.sticky-note:nth-child(3) { background: #FFEBA8; transform: rotate(-1deg); }
+.sticky-note:nth-child(4) { background: #E3DAF8; transform: rotate(2.5deg); }
+.sticky-note:hover { transform: rotate(0) translateY(-6px); }
+.sticky-note svg { width: 70px; height: 72px; }
+.sticky-note h3 { font-family: "Caveat", cursive; font-size: 32px; font-weight: 700; margin: 6px 0 2px; line-height: 1; }
+.sticky-note p { margin: 0; font-size: 15px; color: var(--print-soft); }
+.fine { text-align: center; color: var(--soft); margin-top: 30px; font-size: 15px; }
+
+.duo { text-align: center; }
+.duo > p { max-width: 32em; margin: 0 auto; color: var(--soft); }
+.duo-shots { display: grid; grid-template-columns: 1.42fr 1fr; gap: 26px; align-items: center; margin-top: 40px; }
+.duo-shots .polaroid:first-child { transform: rotate(-1.5deg); }
+.duo-shots .polaroid:last-child { transform: rotate(3deg); }
+@media (max-width: 560px) { .duo-shots { grid-template-columns: 1fr; } }
+
+/* P.S. from Kevin */
+.ps { max-width: 620px; margin: 90px auto 0; background: var(--print); color: var(--print-ink); padding: 40px clamp(22px, 5vw, 48px); position: relative; transform: rotate(-1deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 20px 40px var(--shadow);
+  background-image: repeating-linear-gradient(transparent 0 33px, rgba(110,150,200,.25) 33px 34px); background-position: 0 18px; }
+.ps .hand { font-size: 34px; color: var(--print-ink); line-height: 1.15; margin: 0; }
+.ps .sig { color: #D14D6B; }
+.ps .stamp { color: #D14D6B; border-color: #D14D6B; }
+.ps .get { margin-top: 18px; justify-content: center; }
+
+/* Download bar: shown whenever the hero's button is off screen (site.js) */
+.dl-bar {
+  position: fixed; z-index: 10; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translate(-50%, 160%); transition: transform .45s cubic-bezier(.3,1.4,.5,1);
+  display: flex; align-items: center; gap: 12px; background: var(--print); color: var(--print-ink); padding: 6px 8px 6px 6px; border-radius: 6px;
+  box-shadow: 0 10px 30px var(--shadow); width: max-content; max-width: calc(100vw - 32px);
+}
+.dl-bar.show { transform: translate(-50%, 0) rotate(-1deg); }
+.dl-bar img.icon { width: 42px; height: 42px; border-radius: 10px; }
+.dl-bar b { font-family: "Caveat", cursive; font-size: 24px; white-space: nowrap; }
+.dl-bar .stamp { animation: none; font-size: 12px; padding: 6px 10px 4px; border-width: 3px; transform: rotate(-4deg); color: #D14D6B; border-color: #D14D6B; }
+.dl-bar .badge { padding: 0; }
+.dl-bar .badge img { height: 42px; }
+
+/* Document pages: a sheet of paper taped to the kraft */
 .doc {
-  background: var(--print);
-  color: #3A2F30;
-  border-radius: 4px;
-  padding: clamp(24px, 6vw, 56px);
-  margin: 16px 0 0;
-  box-shadow: 0 18px 44px var(--shadow), 0 1px 3px var(--shadow);
+  position: relative; max-width: 760px; margin: 24px auto 0; background: var(--print); color: var(--print-ink);
+  padding: clamp(28px, 6vw, 60px); box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 20px 44px var(--shadow);
 }
-.doc h1 { font-size: clamp(40px, 9vw, 60px); }
-.doc h2 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 28px;
-  margin: 36px 0 8px;
-}
-.doc .label { color: rgba(58, 47, 48, 0.6); }
-.doc a { color: #6E2F3B; }
+.doc .tape { top: -15px; }
+.doc .label { font-family: "Caveat", cursive; font-weight: 700; font-size: 26px; color: #D14D6B; margin: 0; transform: rotate(-2deg); display: inline-block; }
+.doc h1 { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(46px, 9vw, 72px); line-height: 1; margin: 4px 0 20px; }
+.doc h2 { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: 32px; line-height: 1.1; margin: 40px 0 8px; }
+.doc a { color: #B23A58; }
 .doc ul { padding-left: 1.2em; }
 .doc li { margin: 6px 0; }
 .doc dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 16px 0; }
-.doc dt { font-weight: 600; }
+.doc dt { font-family: "Caveat", cursive; font-weight: 700; font-size: 23px; line-height: 1.1; }
 .doc dd { margin: 0; }
 @media (max-width: 520px) {
-  .doc dl { grid-template-columns: 1fr; gap: 2px; }
-  .doc dd { margin-bottom: 10px; }
+  .doc dl { grid-template-columns: 1fr; gap: 0; }
+  .doc dd { margin-bottom: 12px; }
 }
-
-.callout {
-  border-left: 3px solid #E9808F;
-  padding: 4px 0 4px 16px;
-  margin: 20px 0;
-}
-
-/* App Store badge: Apple's artwork, unmodified, at least 40px high, with clear space. */
-.badge { display: inline-block; margin-top: 32px; padding: 12px; line-height: 0; }
-.badge img { height: 50px; width: auto; }
-
-/* The product page header loop, full width. */
-.banner { margin: 24px 0 0; }
-.banner video { display: block; width: 100%; aspect-ratio: 3840 / 1646; object-fit: cover; }
-
-/* The app preview beside its words. */
-.feature {
-  display: grid;
-  grid-template-columns: minmax(0, 260px) 1fr;
-  gap: 40px;
-  align-items: center;
-  margin-top: 64px;
-}
-.feature-video video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 886 / 1920;
-  border-radius: 28px;
-  background: #000;
-  box-shadow: 0 18px 40px var(--shadow), 0 2px 6px var(--shadow);
-}
-.feature h2, .duo h2 { font-size: clamp(36px, 7vw, 48px); margin: 8px 0 12px; }
-.feature p, .duo-lede { color: var(--ink-soft); }
-@media (max-width: 620px) {
-  .feature { grid-template-columns: 1fr; text-align: center; }
-  .feature-video { max-width: 240px; margin: 0 auto; }
-}
-
-/* Screenshots: a strip that scrolls sideways. */
-.shots {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 56px max(20px, calc((100vw - 1040px) / 2)) 24px;
-  scrollbar-width: none;
-}
-.shots::-webkit-scrollbar { display: none; }
-.shots img {
-  flex: 0 0 auto;
-  width: min(62vw, 240px);
-  height: auto;
-  border-radius: 14px;
-  scroll-snap-align: center;
-  box-shadow: 0 12px 28px var(--shadow);
-}
-
-/* iPhone Duo */
-.duo { text-align: center; margin-top: 48px; }
-.duo-lede { max-width: 32em; margin: 0 auto; }
-.duo-shots {
-  display: grid;
-  grid-template-columns: 1.42fr 1fr;
-  gap: 18px;
-  align-items: center;
-  margin-top: 28px;
-}
-.duo-shots img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 12px 28px var(--shadow); }
-
-.fine { text-align: center; font-size: 14px; color: var(--ink-soft); margin-top: 28px; }
+.doc .see-also { margin-top: 36px; color: var(--print-soft); font-size: 15px; }
+/* A sticky note stuck to the sheet */
+.callout { background: #FFEBA8; padding: 18px 20px; margin: 20px -6px 8px; transform: rotate(-.8deg); box-shadow: 0 10px 18px -8px rgba(62,42,44,.35); }
 
 @media (prefers-reduced-motion: reduce) {
-  .cta, .print { transition: none; transform: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 [hidden] { display: none !important; }

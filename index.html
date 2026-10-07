@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#F1C9C3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#262A33" media="(prefers-color-scheme: dark)">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EADCC4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2B2321" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="style.css?v=06d140c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Instrument+Sans:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="style.css?v=scrapbook1">
 <title>Kevin the Pig</title>
 <meta name="description" content="The squeaky fidget toy you can poke, prod, spin and pinch. Scanned from a real rubber pig, made for iPhone and iPhone Duo.">
 <meta property="og:title" content="Kevin the Pig">
 <meta property="og:description" content="The squeaky fidget toy you can poke, prod, spin and pinch. For iPhone and iPhone Duo.">
 <meta property="og:image" content="https://kevinthepig.com/og-image.png">
 </head>
-<body>
+<body class="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="pig" viewBox="160 300 704 724">
     <path fill="currentColor" d="M232 560C196 452 204 360 236 312C310 330 388 392 424 458Z"/>
@@ -25,7 +25,6 @@
     <path fill="#000" fill-opacity="0.12" d="M270 520C250 460 254 408 268 380C310 394 350 430 372 466Z"/>
     <path fill="#000" fill-opacity="0.12" d="M754 520C774 460 770 408 756 380C714 394 674 430 652 466Z"/>
     <path fill="currentColor" d="M180 1024C180 740 330 480 512 480C694 480 844 740 844 1024Z"/>
-    <path fill="#fff" fill-opacity="0.22" d="M180 1024C180 740 330 480 512 480C694 480 844 740 844 1024Z" style="mix-blend-mode:soft-light"/>
     <ellipse fill="#000" fill-opacity="0.1" cx="512" cy="840" rx="160" ry="110"/>
     <ellipse fill="#000" fill-opacity="0.32" cx="462" cy="846" rx="24" ry="40"/>
     <ellipse fill="#000" fill-opacity="0.32" cx="562" cy="846" rx="24" ry="40"/>
@@ -35,94 +34,124 @@
     <circle fill="#fff" cx="604" cy="639" r="10"/>
   </symbol>
 </svg>
-<header class="wrap site-header">
-  <a class="brand" href="./"><img src="icon.svg" alt="" width="32" height="32"><span>Kevin the Pig</span></a>
-  <nav class="nav label" aria-label="Site">
+
+<header class="site-header">
+  <a class="brand serif" href="./"><img src="icon.svg" alt="" width="34" height="34">Kevin the Pig</a>
+  <nav class="nav" aria-label="Site">
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
   </nav>
 </header>
+
 <main>
-  <section class="hero wrap">
-    <img class="icon" src="icon.svg" alt="Kevin the Pig app icon" width="148" height="148">
-    <p class="label" style="margin-top:28px">For iPhone · Made for iPhone Duo</p>
-    <h1 class="display">Kevin the Pig</h1>
-    <p class="lede">The squeaky fidget toy you can poke, prod, spin and pinch. He squeaks, oinks and wobbles back every time.</p>
-    <!-- Apple's official badge (toolbox.marketingtools.apple.com), unmodified, linking to the
-         product page. store.js shows it once Kevin is on the App Store; until then, "Coming soon". -->
-    <a class="badge" href="https://apps.apple.com/app/id6817405741" data-store-badge hidden>
-      <img src="media/app-store-badge-black.svg" alt="Download on the App Store" width="150" height="50">
-    </a>
-    <p class="cta" aria-disabled="true" data-store-soon>Coming soon to the App Store</p>
-  </section>
-
-  <figure class="banner">
-    <video src="media/header.mp4" poster="media/header-poster.jpg" autoplay muted loop playsinline aria-label="Kevin trotting across the studio paper"></video>
-  </figure>
-
-  <section class="wrap feature">
-    <div class="feature-video">
-      <video src="media/preview.mp4" poster="media/preview-poster.jpg" autoplay muted loop playsinline aria-label="Kevin being poked, pinched, spun and shaken"></video>
+  <section class="hero">
+    <div>
+      <p class="hand hi">say hello to…</p>
+      <h1 class="serif">Kevin the Pig</h1>
+      <p class="lede">The squeaky fidget toy you can poke, prod, spin and pinch, for iPhone and iPhone Duo. He squeaks, oinks and wobbles back every time.</p>
+      <!-- Apple's official badge (toolbox.marketingtools.apple.com), unmodified, linking to the
+           product page. store.js shows it once Kevin is on the App Store; until then, the stamp. -->
+      <div class="get" data-hero-cta>
+        <a class="badge" href="https://apps.apple.com/app/id6817405741" data-store-badge hidden>
+          <picture>
+            <source srcset="media/app-store-badge-white.svg" media="(prefers-color-scheme: dark)">
+            <img src="media/app-store-badge-black.svg" alt="Download on the App Store" width="168" height="56">
+          </picture>
+        </a>
+        <p class="stamp" data-store-soon><b>Coming soon</b>to the App Store</p>
+        <span class="aside">it's free!</span>
+      </div>
     </div>
-    <div class="feature-text">
-      <p class="label">A real squeaky toy</p>
-      <h2 class="display">Scanned from a real rubber pig</h2>
-      <p>Kevin was 3D-scanned from an actual squeaky toy, and every squeak and oink you hear is a recording of the real thing.</p>
-      <p>Squeeze him and he squashes. Pinch him and his belly puffs up. Spin him until he's dizzy, or shake your iPhone for a surprise: bacon, gold coins or glowing confetti.</p>
+    <figure class="polaroid hero-pic">
+      <span class="tape"></span>
+      <video src="media/header.mp4" poster="media/header-poster.jpg" autoplay muted loop playsinline aria-label="Kevin trotting across the studio paper"></video>
+      <figcaption>Kevin, out for a trot</figcaption>
+      <span class="note note-1 hand">
+        <svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true"><path d="M4 30 C 20 6, 44 4, 64 18 M64 18 l-11 -2 M64 18 l-4 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        a real toy!
+      </span>
+    </figure>
+  </section>
+
+  <section class="page wrap">
+    <div class="feature">
+      <figure class="polaroid">
+        <span class="tape butter"></span>
+        <video src="media/preview.mp4" poster="media/preview-poster.jpg" autoplay muted loop playsinline aria-label="Kevin being poked, pinched, spun and shaken"></video>
+      </figure>
+      <div>
+        <h2 class="serif">Scanned from a real rubber pig</h2>
+        <p>Kevin was 3D-scanned from an actual squeaky toy, and <u>every squeak and oink you hear is a recording of the real thing</u>.</p>
+        <p>Squeeze him and he squashes. Pinch him and his belly puffs up. Spin him until he's dizzy, or shake your iPhone for a surprise: bacon, gold coins or glowing confetti.</p>
+        <p class="hand scribble">yes, actual bacon ↯</p>
+      </div>
     </div>
   </section>
 
-  <section class="shots" aria-label="Screenshots">
-    <img src="media/shot-01-fidget.jpg" alt="The fidget toy you can poke, prod, spin and pinch" loading="lazy">
-    <img src="media/shot-02-shake.jpg" alt="Shake him for a surprise" loading="lazy">
-    <img src="media/shot-03-pinch.jpg" alt="Pinch him. He puffs up." loading="lazy">
-    <img src="media/shot-04-scan.jpg" alt="Scanned from a real toy pig" loading="lazy">
-    <img src="media/shot-05-materials.jpg" alt="Gold, chrome, glow… or jelly" loading="lazy">
-    <img src="media/shot-06-portrait.jpg" alt="Snap his portrait" loading="lazy">
-    <img src="media/shot-07-yours.jpg" alt="Make Kevin yours" loading="lazy">
+  <section class="page">
+    <div class="wrap board-head"><h2 class="serif">The photo album</h2><span class="hand">scroll sideways →</span></div>
+    <div class="board" aria-label="Screenshots">
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-01-fidget.jpg" alt="The fidget toy you can poke, prod, spin and pinch" loading="lazy"><figcaption>poke!</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-02-shake.jpg" alt="Shake him for a surprise" loading="lazy"><figcaption>bacon storm</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-03-pinch.jpg" alt="Pinch him. He puffs up." loading="lazy"><figcaption>puffed up</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-04-scan.jpg" alt="Scanned from a real toy pig" loading="lazy"><figcaption>the real Kevin</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-05-materials.jpg" alt="Gold, chrome, glow… or jelly" loading="lazy"><figcaption>jelly Kevin!!</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-06-portrait.jpg" alt="Snap his portrait" loading="lazy"><figcaption>say oink</figcaption></figure>
+      <figure class="polaroid"><span class="tape"></span><img src="media/shot-07-yours.jpg" alt="Make Kevin yours" loading="lazy"><figcaption>all dressed up</figcaption></figure>
+    </div>
   </section>
 
-  <section class="wrap duo">
-    <p class="label">iPhone Duo</p>
-    <h2 class="display">Twice the room to play</h2>
-    <p class="duo-lede">Open it flat and Kevin trots the whole spread, leaping the crease. Stand it up like a book and he explores. Close it on him and he pops out onto the cover display, still squeezable.</p>
+  <section class="page wrap">
+    <h2 class="serif" style="text-align:center">Things to do with a pig</h2>
+    <div class="notes">
+      <article class="sticky-note"><svg style="color:#F4A5AF" aria-hidden="true"><use href="#pig"/></svg><h3>Poke &amp; squeeze</h3><p>Tap to boop, press to squish, pinch to puff him up.</p></article>
+      <article class="sticky-note"><svg style="color:#A9D29C" aria-hidden="true"><use href="#pig"/></svg><h3>Spin &amp; shake</h3><p>Spin him dizzy, toss him across the paper, shake for a surprise.</p></article>
+      <article class="sticky-note"><svg style="color:#F6CD6D" aria-hidden="true"><use href="#pig"/></svg><h3>Portrait studio</h3><p>Pose him, light him, watch his print develop like instant film.</p></article>
+      <article class="sticky-note"><svg style="color:#BEA9EC" aria-hidden="true"><use href="#pig"/></svg><h3>Make him yours</h3><p>New colours, and with Kevin Plus: chrome, glow, jelly, lipstick and hats.</p></article>
+    </div>
+    <p class="fine">Kevin is free. Kevin Plus is a one-time in-app purchase.</p>
+  </section>
+
+  <section class="page wrap duo">
+    <p class="hand" style="font-size:30px;margin:0">on iPhone Duo…</p>
+    <h2 class="serif">Twice the room to play</h2>
+    <p>Open it flat and Kevin trots the whole spread, leaping the crease. Close it on him and he pops out onto the cover display, still squeezable.</p>
     <div class="duo-shots">
-      <img src="media/duo-inner-landscape-01-room.jpg" alt="Kevin on iPhone Duo's open display" loading="lazy">
-      <img src="media/duo-outer-01-pop.jpg" alt="Kevin popping out onto iPhone Duo's cover display" loading="lazy">
+      <figure class="polaroid"><span class="tape lilac"></span><img src="media/duo-inner-landscape-01-room.jpg" alt="Kevin on iPhone Duo's open display" loading="lazy"></figure>
+      <figure class="polaroid"><span class="tape butter"></span><img src="media/duo-outer-01-pop.jpg" alt="Kevin popping out onto iPhone Duo's cover display" loading="lazy"></figure>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="prints" aria-label="What you can do">
-      <article class="print">
-        <div class="swatch" style="background:#F1C9C3"><svg class="pig" style="color:#F4A5AF" aria-hidden="true"><use href="#pig"/></svg></div>
-        <h3>Poke &amp; squeeze</h3>
-        <p>Tap to boop, press to squish, pinch to puff him up. He squeaks.</p>
-      </article>
-      <article class="print">
-        <div class="swatch" style="background:#D3E2C4"><svg class="pig" style="color:#A9D29C" aria-hidden="true"><use href="#pig"/></svg></div>
-        <h3>Spin &amp; shake</h3>
-        <p>Spin him dizzy, toss him across the paper, shake for a surprise.</p>
-      </article>
-      <article class="print">
-        <div class="swatch" style="background:#F3E4B6"><svg class="pig" style="color:#F6CD6D" aria-hidden="true"><use href="#pig"/></svg></div>
-        <h3>Portrait studio</h3>
-        <p>Pose him, light him, and watch his print develop like instant film.</p>
-      </article>
-      <article class="print">
-        <div class="swatch" style="background:#DBD2EF"><svg class="pig" style="color:#BEA9EC" aria-hidden="true"><use href="#pig"/></svg></div>
-        <h3>Make him yours</h3>
-        <p>New colours, and with Kevin Plus: chrome, glow, jelly, lipstick and hats.</p>
-      </article>
+    <div class="ps">
+      <span class="tape mint"></span>
+      <p class="hand">P.S. I'm free, I squeak, and I'd love to live on your iPhone.</p>
+      <p class="hand sig">— Kevin ♥</p>
+      <div class="get">
+        <a class="badge" href="https://apps.apple.com/app/id6817405741" data-store-badge hidden>
+          <img src="media/app-store-badge-black.svg" alt="Download on the App Store" width="168" height="56">
+        </a>
+        <p class="stamp" data-store-soon><b>Coming soon</b>to the App Store</p>
+      </div>
     </div>
-    <p class="fine">Kevin is free. Kevin Plus is a one-time in-app purchase.</p>
   </section>
 </main>
-<footer class="wrap site-footer label">
-  <span>© 2026 Paul Colton</span>
-  <span><a href="mailto:hi@kevinthepig.com">hi@kevinthepig.com</a></span>
+
+<div class="dl-bar" data-dl-bar>
+  <img class="icon" src="icon.svg" alt="" width="42" height="42">
+  <b>Kevin the Pig</b>
+  <a class="badge" href="https://apps.apple.com/app/id6817405741" data-store-badge hidden>
+    <img src="media/app-store-badge-black.svg" alt="Download on the App Store" width="126" height="42">
+  </a>
+  <span class="stamp" data-store-soon>Coming soon</span>
+</div>
+
+<footer class="site-footer">
+  <span>© 2026 Paul Colton · <a href="mailto:hi@kevinthepig.com">hi@kevinthepig.com</a></span>
+  <nav aria-label="Legal"><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
 </footer>
-<script src="store.js?v=06d140c" defer></script>
+<script src="site.js?v=scrapbook1" defer></script>
+<script src="store.js?v=scrapbook1" defer></script>
 </body>
 </html>
