@@ -106,16 +106,9 @@ img, video { display: block; max-width: 100%; }
   .note-1 svg { display: none; }
 }
 
-/* Get it: a rubber stamp until launch, Apple's badge after (see store.js) */
+/* Get it: Apple's download badge and a handwritten aside */
 .get { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
 @media (max-width: 860px) { .hero .get { justify-content: center; } }
-.stamp {
-  margin: 0; display: inline-block; color: var(--pen); border: 4px solid var(--pen); border-radius: 10px; padding: 8px 18px 6px;
-  font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 15px; line-height: 1.2; text-align: center;
-  transform: rotate(-6deg); animation: thunk .6s cubic-bezier(.3,1.8,.5,1) .4s both;
-}
-.stamp b { display: block; font-size: 30px; letter-spacing: .06em; font-weight: 600; }
-@keyframes thunk { from { transform: rotate(-6deg) scale(1.8); opacity: 0; } }
 /* Apple's badge, unmodified, at least 40px high, with clear space */
 .badge { display: inline-block; padding: 10px; line-height: 0; transition: transform .2s; }
 .badge:hover { transform: rotate(-2deg) scale(1.05); }
@@ -177,7 +170,6 @@ h2.serif { font-size: clamp(40px, 6vw, 60px); line-height: 1; margin: 0 0 12px; 
   background-image: repeating-linear-gradient(transparent 0 33px, rgba(110,150,200,.25) 33px 34px); background-position: 0 18px; }
 .ps .hand { font-size: 34px; color: var(--print-ink); line-height: 1.15; margin: 0; }
 .ps .sig { color: #D14D6B; }
-.ps .stamp { color: #D14D6B; border-color: #D14D6B; }
 .ps .get { margin-top: 18px; justify-content: center; }
 
 /* Download bar: shown whenever the hero's button is off screen (site.js) */
@@ -189,7 +181,6 @@ h2.serif { font-size: clamp(40px, 6vw, 60px); line-height: 1; margin: 0 0 12px; 
 .dl-bar.show { transform: translate(-50%, 0) rotate(-1deg); }
 .dl-bar img.icon { width: 42px; height: 42px; border-radius: 10px; }
 .dl-bar b { font-family: "Caveat", cursive; font-size: 24px; white-space: nowrap; }
-.dl-bar .stamp { animation: none; font-size: 12px; padding: 6px 10px 4px; border-width: 3px; transform: rotate(-4deg); color: #D14D6B; border-color: #D14D6B; }
 .dl-bar .badge { padding: 0; }
 .dl-bar .badge img { height: 42px; }
 
