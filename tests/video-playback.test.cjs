@@ -99,7 +99,7 @@ test('late autoplay resolution cannot hide reduced-motion posters or restart pla
 test('HTML never autoplays before JS and retains posters and no-JS controls', () => {
   const html = fs.readFileSync('index.html', 'utf8');
   const videos = html.match(/<video\b[^>]*>/g);
-  assert.equal(videos.length, 2);
+  assert.equal(videos.length, 1);
   videos.forEach(tag => {
     assert.doesNotMatch(tag, /\bautoplay\b/);
     for (const attr of ['poster=', 'data-auto-video', 'controls', 'playsinline']) assert.ok(tag.includes(attr));
